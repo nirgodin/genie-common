@@ -4,7 +4,7 @@ from typing import List, Dict, Optional
 from aiohttp import ClientSession
 
 from genie_common.models.openai import ChatCompletionsModel
-from genie_common.openai.openai_consts import MODEL, MESSAGES
+from genie_common.openai.openai_consts import MODEL, MESSAGES, ADA_EMBEDDINGS_MODEL
 
 
 # from server.consts.app_consts import MESSAGE, PROMPT
@@ -36,30 +36,6 @@ class OpenAIClient:
             response = await raw_response.json()
 
         return response[CHOICES][0][MESSAGE][CONTENT]
-
-    async def embeddings(self, text: str, model: str = ADA_EMBEDDINGS_MODEL) -> Optional[List[float]]:
-        logger.info("Received embeddings request", extra={"text": text})
-        body = {
-            INPUT: text,
-            MODEL: model
-        }
-
-        async with self._session.post(EMBEDDINGS_URL, json=body, headers=self._headers) as raw_response:
-            if not raw_response.ok:
-                return
-
-            response = await raw_response.json()
-
-        return self._serialize_embeddings_response(response)
-
-    @staticmethod
-    def _serialize_embeddings_response(response: dict) -> Optional[List[float]]:
-        data = response.get(DATA, [])
-        if not data:
-            return
-
-        first_element = data[0]
-        return first_element.get(EMBEDDING)
 
     async def create_image(self, prompt: str, image_path: str) -> Optional[str]:
         body = {

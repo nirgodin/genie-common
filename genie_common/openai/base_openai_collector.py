@@ -30,7 +30,7 @@ class BaseOpenAICollector(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def _serialize_response(self, response: Union[dict, list]) -> Any:
+    def _serialize_response(self, response: Json) -> Any:
         raise NotImplementedError
 
     async def _post(self, body: dict) -> Optional[Json]:
@@ -44,4 +44,4 @@ class BaseOpenAICollector(ABC):
 
     @property
     def _url(self) -> str:
-        return BASE_OPENAI_API_URL
+        return f"{BASE_OPENAI_API_URL}/{self._route}"
