@@ -3,7 +3,8 @@ from typing import List, Dict, Optional
 
 from aiohttp import ClientSession
 
-from genie_common.openai.openai_models.chat_completions_model import ChatCompletionsModel
+from genie_common.models.openai import ChatCompletionsModel
+from genie_common.openai.openai_consts import MODEL, MESSAGES
 
 
 # from server.consts.app_consts import MESSAGE, PROMPT
