@@ -15,3 +15,6 @@ ADA_EMBEDDINGS_MODEL = 'text-embedding-ada-002'
 EMBEDDING = 'embedding'
 INPUT = 'input'
 MESSAGE = 'message'
+PROMPT = "prompt"
+RESPONSE_FORMAT = "response_format"
+B64_JSON = "b64_json"
