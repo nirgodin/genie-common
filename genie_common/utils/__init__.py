@@ -2,6 +2,7 @@ from genie_common.utils.callable_utils import *
 from genie_common.utils.datetime_utils import *
 from genie_common.utils.dict_utils import *
 from genie_common.utils.enum_utils import *
+from genie_common.utils.image_utils import *
 from genie_common.utils.iterable_utils import *
 from genie_common.utils.string_utils import *
 from genie_common.utils.web_utils import *
@@ -21,7 +22,10 @@ __all__ = [
 
     # enum
     "get_all_enum_values",
-    
+
+    # image
+    "decode_image",
+
     # iterable
     "chain_lists",
 
@@ -30,4 +34,5 @@ __all__ = [
 
     # web
     "jsonify_response",
+    "fetch_image"
 ]

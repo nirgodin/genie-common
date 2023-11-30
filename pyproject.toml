@@ -9,6 +9,7 @@ readme = "README.md"
 python = ">=3.8,<3.12"
 aiohttp = ">=3.6.3,<3.9.0"
 asyncio-pool = "^0.6.0"
+opencv-python = ">=4.7,<5.0"
 
 
 [build-system]
