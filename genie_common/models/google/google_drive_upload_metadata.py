@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+from genie_common.google.google_drive_consts import NAME, PARENTS
+
 
 @dataclass
 class GoogleDriveUploadMetadata:
@@ -9,6 +11,6 @@ class GoogleDriveUploadMetadata:
 
     def __post_init__(self):
         self.metadata = {
-            'name': self.file_name,
-            'parents': [self.drive_folder_id]
+            NAME: self.file_name,
+            PARENTS: [self.drive_folder_id]
         }
