@@ -34,5 +34,6 @@ __all__ = [
 
     # web
     "jsonify_response",
-    "fetch_image"
+    "fetch_image",
+    "create_client_session"
 ]
