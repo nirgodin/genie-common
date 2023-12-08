@@ -1,5 +1,5 @@
 from ssl import create_default_context
-from typing import Optional
+from typing import Optional, Dict
 
 from aiohttp import ClientResponse, ClientResponseError, ClientSession, TCPConnector, CookieJar
 from certifi import where
@@ -40,3 +40,11 @@ def create_client_session(headers: Optional[dict] = None) -> ClientSession:
         cookie_jar=CookieJar(quote_cookie=False),
         headers=headers
     )
+
+
+def build_authorization_headers(bearer_token: str) -> Dict[str, str]:
+    return {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {bearer_token}"
+    }

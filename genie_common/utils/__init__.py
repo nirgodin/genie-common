@@ -35,5 +35,6 @@ __all__ = [
     # web
     "jsonify_response",
     "fetch_image",
-    "create_client_session"
+    "create_client_session",
+    "build_authorization_headers"
 ]
