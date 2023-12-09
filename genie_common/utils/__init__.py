@@ -4,6 +4,7 @@ from genie_common.utils.dict_utils import *
 from genie_common.utils.enum_utils import *
 from genie_common.utils.image_utils import *
 from genie_common.utils.iterable_utils import *
+from genie_common.utils.os_utils import *
 from genie_common.utils.string_utils import *
 from genie_common.utils.web_utils import *
 
@@ -29,8 +30,12 @@ __all__ = [
     # iterable
     "chain_lists",
 
+    # OS
+    "is_empty_dir",
+
     # string
     "compute_similarity_score",
+    "string_to_boolean",
 
     # web
     "jsonify_response",
