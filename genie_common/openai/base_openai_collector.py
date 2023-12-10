@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Any, Union, Optional
+from typing import Any, Optional
 
 from aiohttp import ClientSession
 
@@ -35,7 +35,7 @@ class BaseOpenAICollector(ABC):
 
     async def _post(self, body: dict) -> Optional[Json]:
         async with self._session.post(url=self._url, json=body) as raw_response:
-            return await jsonify_response(raw_response)
+            return await jsonify_response(raw_response, self._wrap_exceptions)
 
     @property
     @abstractmethod
