@@ -2,9 +2,11 @@ from genie_common.utils.callable_utils import *
 from genie_common.utils.datetime_utils import *
 from genie_common.utils.dict_utils import *
 from genie_common.utils.enum_utils import *
+from genie_common.utils.file_utils import *
 from genie_common.utils.image_utils import *
 from genie_common.utils.iterable_utils import *
 from genie_common.utils.os_utils import *
+from genie_common.utils.regex_utils import *
 from genie_common.utils.string_utils import *
 from genie_common.utils.web_utils import *
 
@@ -24,6 +26,10 @@ __all__ = [
     # enum
     "get_all_enum_values",
 
+    # file
+    "read_json",
+    "to_json",
+
     # image
     "decode_image",
 
@@ -33,8 +39,12 @@ __all__ = [
     # OS
     "is_empty_dir",
 
+    # regex
+    "search_between_two_characters",
+
     # string
     "compute_similarity_score",
+    "contains_any_hebrew_character",
     "string_to_boolean",
 
     # web
