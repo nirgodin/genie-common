@@ -1,4 +1,3 @@
-import json
 from typing import Optional
 
 from genie_common.models.openai import ImageSize
@@ -20,8 +19,7 @@ class ImageVariatorCollector(BaseOpenAICollector):
         data = response[DATA]
 
         if data:
-            serialized_response = json.loads(data[0])
-            return serialized_response[IMAGE]
+            return data[0][B64_JSON]
 
     @property
     def _route(self) -> str:
