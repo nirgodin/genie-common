@@ -20,6 +20,7 @@ __all__ = [
     # dict
     "safe_nested_get",
     "merge_dicts",
+    "sort_dict_by_key",
     "sort_dict_by_value",
     "chain_dicts",
 
