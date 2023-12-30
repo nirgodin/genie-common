@@ -3,10 +3,12 @@ from typing import Any
 
 
 class IEncoder(ABC):
+    @staticmethod
     @abstractmethod
-    def encode(self, obj: Any) -> Any:
+    def encode(obj: Any) -> Any:
         raise NotImplementedError()
 
+    @staticmethod
     @abstractmethod
-    def decode(self, obj: Any) -> Any:
+    def decode(obj: Any) -> Any:
         raise NotImplementedError()
