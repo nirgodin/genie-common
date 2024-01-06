@@ -25,5 +25,9 @@ def sort_dict_by_value(dct: dict, reverse: bool = True) -> dict:
     return dict(sorted(dct.items(), key=lambda x: x[1], reverse=reverse))
 
 
+def sort_dict_by_key(dct: dict, reverse: bool = True) -> dict:
+    return dict(sorted(dct.items(), key=lambda x: x[0], reverse=reverse))
+
+
 def chain_dicts(*dct: dict) -> dict:
     return reduce(lambda dict1, dict2: {**dict1, **dict2}, dct)

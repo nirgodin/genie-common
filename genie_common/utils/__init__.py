@@ -3,6 +3,7 @@ from genie_common.utils.datetime_utils import *
 from genie_common.utils.dict_utils import *
 from genie_common.utils.enum_utils import *
 from genie_common.utils.file_utils import *
+from genie_common.utils.general_utils import is_primitive
 from genie_common.utils.image_utils import *
 from genie_common.utils.iterable_utils import *
 from genie_common.utils.os_utils import *
@@ -20,6 +21,7 @@ __all__ = [
     # dict
     "safe_nested_get",
     "merge_dicts",
+    "sort_dict_by_key",
     "sort_dict_by_value",
     "chain_dicts",
 
@@ -29,6 +31,9 @@ __all__ = [
     # file
     "read_json",
     "to_json",
+
+    # general
+    "is_primitive",
 
     # image
     "decode_image",
