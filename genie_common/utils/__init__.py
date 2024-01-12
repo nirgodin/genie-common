@@ -45,6 +45,7 @@ __all__ = [
     "is_empty_dir",
 
     # regex
+    "extract_int_from_string",
     "search_between_two_characters",
 
     # string
