@@ -43,6 +43,9 @@ __all__ = [
 
     # OS
     "is_empty_dir",
+    "env_var_to_bool",
+    "env_var_to_int",
+    "env_var_to_list",
 
     # regex
     "extract_int_from_string",
