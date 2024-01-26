@@ -1,10 +1,11 @@
 from functools import partial
-from typing import Sized, Any, Awaitable, Callable, List, Optional, Type
+from typing import Sized, Any, List, Optional, Type
 
 from asyncio_pool import AioPool
 from tqdm import tqdm
 
 from genie_common.tools.logs import logger
+from genie_common.typing import AF
 
 
 class AioPoolExecutor:
@@ -14,7 +15,7 @@ class AioPoolExecutor:
 
     async def run(self,
                   iterable: Sized,
-                  func: Callable[..., Awaitable[Any]],
+                  func: AF,
                   expected_type: Optional[Type] = None) -> List[Any]:
         pool = AioPool(self._pool_size)
 
@@ -28,7 +29,7 @@ class AioPoolExecutor:
         return results
 
     @staticmethod
-    async def _execute_single(progress_bar: tqdm, func: Callable[..., Awaitable[Any]], value: Any) -> Any:
+    async def _execute_single(progress_bar: tqdm, func: AF, value: Any) -> Any:
         try:
             return await func(value)
 
