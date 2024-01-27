@@ -24,6 +24,7 @@ __all__ = [
     "sort_dict_by_key",
     "sort_dict_by_value",
     "chain_dicts",
+    "get_dict_first_key",
 
     # enum
     "get_all_enum_values",

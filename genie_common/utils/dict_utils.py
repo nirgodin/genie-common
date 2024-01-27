@@ -31,3 +31,7 @@ def sort_dict_by_key(dct: dict, reverse: bool = True) -> dict:
 
 def chain_dicts(*dct: dict) -> dict:
     return reduce(lambda dict1, dict2: {**dict1, **dict2}, dct)
+
+
+def get_dict_first_key(dct: dict) -> Any:
+    return list(dct.keys())[0]
