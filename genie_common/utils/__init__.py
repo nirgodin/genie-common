@@ -16,6 +16,8 @@ __all__ = [
     "run_async",
 
     # datetime
+    "from_datetime",
+    "get_last_month_day",
     "to_datetime",
 
     # dict
