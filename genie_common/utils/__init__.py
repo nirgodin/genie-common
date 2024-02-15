@@ -43,6 +43,7 @@ __all__ = [
 
     # iterable
     "chain_lists",
+    "find_most_common_element",
 
     # OS
     "is_empty_dir",
@@ -53,6 +54,8 @@ __all__ = [
     # regex
     "extract_int_from_string",
     "search_between_two_characters",
+    "sub_all_chars_before",
+    "sub_between_two_characters",
 
     # string
     "compute_similarity_score",
