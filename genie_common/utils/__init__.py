@@ -55,6 +55,7 @@ __all__ = [
     "extract_int_from_string",
     "search_between_two_characters",
     "sub_all_chars_before",
+    "sub_all_digits",
     "sub_between_two_characters",
 
     # string

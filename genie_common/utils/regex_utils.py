@@ -22,3 +22,7 @@ def sub_all_chars_before(chars: List[str], text: str) -> str:
     pattern = rf"^.*?[{joined_chars}]"
 
     return re.sub(pattern, "", text)
+
+
+def sub_all_digits(text: str, repl: str = "") -> str:
+    return re.sub(r"\d+", repl, text)
