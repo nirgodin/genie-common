@@ -7,6 +7,7 @@ from genie_common.utils.general_utils import is_primitive
 from genie_common.utils.image_utils import *
 from genie_common.utils.iterable_utils import *
 from genie_common.utils.os_utils import *
+from genie_common.utils.random_utils import *
 from genie_common.utils.regex_utils import *
 from genie_common.utils.string_utils import *
 from genie_common.utils.web_utils import *
@@ -50,6 +51,9 @@ __all__ = [
     "env_var_to_bool",
     "env_var_to_int",
     "env_var_to_list",
+
+    # random
+    "random_alphanumeric_string",
 
     # regex
     "extract_int_from_string",
