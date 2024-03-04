@@ -54,6 +54,7 @@ __all__ = [
 
     # random
     "random_alphanumeric_string",
+    "random_enum_value",
 
     # regex
     "extract_int_from_string",
