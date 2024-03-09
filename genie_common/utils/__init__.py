@@ -54,9 +54,10 @@ __all__ = [
 
     # random
     "random_alphanumeric_string",
-    "random_enum_value",
     "random_boolean",
     "random_datetime",
+    "random_enum_value",
+    "random_string_array",
 
     # regex
     "extract_int_from_string",
@@ -67,10 +68,10 @@ __all__ = [
 
     # string
     "compute_similarity_score",
-    "contains_any_hebrew_character",
-    "string_to_boolean",
     "contains_any_alpha_character",
+    "contains_any_hebrew_character",
     "contains_any_substring",
+    "string_to_boolean",
 
     # web
     "jsonify_response",

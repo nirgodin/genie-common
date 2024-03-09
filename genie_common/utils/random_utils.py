@@ -3,14 +3,16 @@ from datetime import datetime
 from enum import Enum
 from random import choice, randint
 from string import ascii_letters, digits
-from typing import Type, Optional
+from typing import Type, Optional, List, Dict
 
 from genie_common.utils.enum_utils import get_all_enum_values
 
 
-def random_alphanumeric_string(length: int = 32) -> str:
+def random_alphanumeric_string(length: Optional[int] = None) -> str:
+    n_chars = length or randint(0, 20)
     characters = ascii_letters + digits
-    return ''.join(choice(characters) for _ in range(length))
+
+    return ''.join(choice(characters) for _ in range(n_chars))
 
 
 def random_enum_value(enum_: Type[Enum]) -> Enum:
@@ -36,3 +38,8 @@ def random_datetime(**kwargs) -> datetime:
         second=kwargs.get("second", randint(0, 59)),
         microsecond=kwargs.get("microsecond", randint(0, 999999))
     )
+
+
+def random_string_array(length: Optional[int] = None) -> List[str]:
+    n_elements = length or randint(0, 10)
+    return [random_alphanumeric_string() for _ in range(n_elements)]
