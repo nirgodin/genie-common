@@ -58,6 +58,7 @@ __all__ = [
     "random_datetime",
     "random_enum_value",
     "random_string_array",
+    "random_integer_array",
 
     # regex
     "extract_int_from_string",

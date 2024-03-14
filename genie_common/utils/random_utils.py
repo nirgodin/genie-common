@@ -43,3 +43,8 @@ def random_datetime(**kwargs) -> datetime:
 def random_string_array(length: Optional[int] = None) -> List[str]:
     n_elements = length or randint(0, 10)
     return [random_alphanumeric_string() for _ in range(n_elements)]
+
+
+def random_integer_array(length: Optional[int] = None) -> List[int]:
+    n_elements = length or randint(0, 10)
+    return [randint(0, 100) for _ in range(n_elements)]
