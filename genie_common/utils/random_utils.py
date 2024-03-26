@@ -2,7 +2,7 @@ from calendar import monthrange
 from datetime import datetime
 from enum import Enum
 from random import choice, randint
-from string import ascii_letters, digits
+from string import ascii_letters, digits, ascii_lowercase
 from typing import Type, Optional, List, Dict
 
 from genie_common.utils.enum_utils import get_all_enum_values
@@ -48,3 +48,8 @@ def random_string_array(length: Optional[int] = None) -> List[str]:
 def random_integer_array(length: Optional[int] = None) -> List[int]:
     n_elements = length or randint(0, 10)
     return [randint(0, 100) for _ in range(n_elements)]
+
+
+def random_lowercase_string(length: Optional[int] = None) -> str:
+    n_chars = length or randint(0, 20)
+    return ''.join(choice(ascii_lowercase) for _ in range(n_chars))

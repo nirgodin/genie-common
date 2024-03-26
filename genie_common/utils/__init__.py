@@ -59,6 +59,7 @@ __all__ = [
     "random_enum_value",
     "random_string_array",
     "random_integer_array",
+    "random_lowercase_string",
 
     # regex
     "extract_int_from_string",
