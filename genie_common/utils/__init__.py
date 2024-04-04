@@ -72,8 +72,10 @@ __all__ = [
     "compute_similarity_score",
     "contains_any_alpha_character",
     "contains_any_hebrew_character",
+    "contains_all_substrings",
     "contains_any_substring",
     "string_to_boolean",
+    "string_to_bytes",
 
     # web
     "jsonify_response",

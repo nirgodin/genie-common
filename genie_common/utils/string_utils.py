@@ -23,3 +23,11 @@ def contains_any_alpha_character(s: str) -> bool:
 
 def contains_any_substring(s: str, substrings: Iterable[str]) -> bool:
     return any(sub_str in s for sub_str in substrings)
+
+
+def contains_all_substrings(s: str, substrings: Iterable[str]) -> bool:
+    return all(sub_str in s for sub_str in substrings)
+
+
+def string_to_bytes(s: str) -> bytes:
+    return s.encode("utf-8")
