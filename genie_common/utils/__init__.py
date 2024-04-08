@@ -60,6 +60,8 @@ __all__ = [
     "random_string_array",
     "random_integer_array",
     "random_lowercase_string",
+    "random_port",
+    "random_postgres_connection_url",
 
     # regex
     "extract_int_from_string",

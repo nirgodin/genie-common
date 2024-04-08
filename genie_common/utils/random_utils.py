@@ -53,3 +53,16 @@ def random_integer_array(length: Optional[int] = None) -> List[int]:
 def random_lowercase_string(length: Optional[int] = None) -> str:
     n_chars = length or randint(0, 20)
     return ''.join(choice(ascii_lowercase) for _ in range(n_chars))
+
+
+def random_port() -> int:
+    return randint(1000, 9999)
+
+
+def random_postgres_connection_url(host: str = "localhost", driver: str = "asyncpg") -> str:
+    user = random_alphanumeric_string()
+    password = random_alphanumeric_string()
+    port = random_port()
+    db_name = random_alphanumeric_string()
+
+    return f'postgresql+{driver}://{user}:{password}@{host}:{port}/{db_name}'
