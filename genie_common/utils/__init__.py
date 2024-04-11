@@ -58,6 +58,7 @@ __all__ = [
     "random_datetime",
     "random_enum_value",
     "random_string_array",
+    "random_string_dict",
     "random_integer_array",
     "random_lowercase_string",
     "random_port",
