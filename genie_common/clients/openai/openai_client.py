@@ -1,7 +1,6 @@
 from aiohttp import ClientSession
 
 from genie_common.clients.openai.openai_collectors import *
-from genie_common.clients.openai.openai_consts import BASE_OPENAI_API_URL
 
 
 class OpenAIClient:
@@ -17,10 +16,9 @@ class OpenAIClient:
 
     @classmethod
     def create(cls, session: ClientSession, wrap_exceptions: bool = True) -> "OpenAIClient":
-        base_url = BASE_OPENAI_API_URL
         return cls(
-            chat_completions=ChatCompletionsCollector(session, base_url, wrap_exceptions),
-            embeddings=EmbeddingsCollector(session, base_url, wrap_exceptions),
-            images_generation=ImageGeneratorCollector(session, base_url, wrap_exceptions),
-            images_variation=ImageVariatorCollector(session, base_url, wrap_exceptions)
+            chat_completions=ChatCompletionsCollector(session, wrap_exceptions),
+            embeddings=EmbeddingsCollector(session, wrap_exceptions),
+            images_generation=ImageGeneratorCollector(session, wrap_exceptions),
+            images_variation=ImageVariatorCollector(session, wrap_exceptions)
         )

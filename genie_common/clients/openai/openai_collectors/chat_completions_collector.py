@@ -1,12 +1,12 @@
 from typing import Union, Dict, List, Optional
 
-from genie_common.clients.base_web_client import BaseWebClient
-from genie_common.models.openai import ChatCompletionsModel
+from genie_common.clients.openai.openai_collectors.base_openai_collector import BaseOpenAICollector
 from genie_common.clients.openai.openai_consts import MODEL, MESSAGES, CHOICES, CONTENT, MESSAGE
+from genie_common.models.openai import ChatCompletionsModel
 from genie_common.utils import safe_nested_get
 
 
-class ChatCompletionsCollector(BaseWebClient):
+class ChatCompletionsCollector(BaseOpenAICollector):
     def _serialize_response(self, response: Union[dict, list]) -> Optional[str]:
         choices = response.get(CHOICES)
 
