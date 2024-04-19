@@ -3,15 +3,15 @@ from typing import Any, Optional
 
 from aiohttp import ClientSession
 
-from genie_common.openai.openai_consts import BASE_OPENAI_API_URL
 from genie_common.tools import logger
 from genie_common.typing import Json
-from genie_common.utils import jsonify_response
+from genie_common.clients.utils import jsonify_response
 
 
-class BaseOpenAICollector(ABC):
-    def __init__(self, session: ClientSession, wrap_exceptions: bool = True):
+class BaseWebClient(ABC):
+    def __init__(self, session: ClientSession, base_url: str, wrap_exceptions: bool = True):
         self._session = session
+        self._base_url = base_url
         self._wrap_exceptions = wrap_exceptions
 
     async def collect(self, *args, **kwargs) -> Optional[Any]:
@@ -44,4 +44,4 @@ class BaseOpenAICollector(ABC):
 
     @property
     def _url(self) -> str:
-        return f"{BASE_OPENAI_API_URL}/{self._route}"
+        return f"{self._base_url}/{self._route}"

@@ -3,14 +3,13 @@ from genie_common.utils.datetime_utils import *
 from genie_common.utils.dict_utils import *
 from genie_common.utils.enum_utils import *
 from genie_common.utils.file_utils import *
-from genie_common.utils.general_utils import is_primitive
+from genie_common.utils.general_utils import *
 from genie_common.utils.image_utils import *
 from genie_common.utils.iterable_utils import *
 from genie_common.utils.os_utils import *
 from genie_common.utils.random_utils import *
 from genie_common.utils.regex_utils import *
 from genie_common.utils.string_utils import *
-from genie_common.utils.web_utils import *
 
 __all__ = [
     # callable
@@ -81,10 +80,4 @@ __all__ = [
     "contains_any_substring",
     "string_to_boolean",
     "string_to_bytes",
-
-    # web
-    "jsonify_response",
-    "fetch_image",
-    "create_client_session",
-    "build_authorization_headers"
 ]

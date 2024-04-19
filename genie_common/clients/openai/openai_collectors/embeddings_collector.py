@@ -1,12 +1,12 @@
 from typing import List, Optional
 
+from genie_common.clients.base_web_client import BaseWebClient
 from genie_common.models.openai import EmbeddingsModel
-from genie_common.openai.base_openai_collector import BaseOpenAICollector
-from genie_common.openai.openai_consts import DATA, EMBEDDING, INPUT, MODEL
+from genie_common.clients.openai.openai_consts import DATA, EMBEDDING, INPUT, MODEL
 from genie_common.typing import Json
 
 
-class EmbeddingsCollector(BaseOpenAICollector):
+class EmbeddingsCollector(BaseWebClient):
     def _build_request_body(self, text: str, model: EmbeddingsModel) -> dict:
         return {
             INPUT: text,
