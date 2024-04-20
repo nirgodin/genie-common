@@ -17,14 +17,12 @@ class BaseWebClient(ABC):
         url = self._build_url(route)
 
         async with self._session.get(url=url, params=params) as raw_response:
-            raw_response.raise_for_status()
             return await jsonify_response(raw_response, self._wrap_exceptions)
 
     async def _post(self, payload: dict, route: Optional[str] = None) -> Json:
         url = self._build_url(route)
 
         async with self._session.post(url=url, json=payload) as raw_response:
-            raw_response.raise_for_status()
             return await jsonify_response(raw_response, self._wrap_exceptions)
 
     def _build_url(self, route: Optional[str]) -> str:
