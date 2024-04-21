@@ -9,8 +9,8 @@ from genie_common.typing import Color
 from genie_common.utils.enum_utils import get_all_enum_values
 
 
-def random_alphanumeric_string(length: Optional[int] = None) -> str:
-    n_chars = length or randint(0, 20)
+def random_alphanumeric_string(min_length: int = 0, max_length: int = 20) -> str:
+    n_chars = randint(min_length, max_length)
     characters = ascii_letters + digits
 
     return ''.join(choice(characters) for _ in range(n_chars))
