@@ -1,8 +1,8 @@
 from typing import Optional
 
+from genie_common.clients.openai.openai_collectors.base_openai_collector import BaseOpenAICollector
+from genie_common.clients.openai.openai_consts import SIZE, N, RESPONSE_FORMAT, B64_JSON, DATA, IMAGE
 from genie_common.models.openai import ImageSize
-from genie_common.openai.base_openai_collector import BaseOpenAICollector
-from genie_common.openai.openai_consts import SIZE, N, RESPONSE_FORMAT, B64_JSON, DATA, IMAGE
 from genie_common.typing import Json
 
 

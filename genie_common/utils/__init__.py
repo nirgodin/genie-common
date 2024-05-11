@@ -3,14 +3,13 @@ from genie_common.utils.datetime_utils import *
 from genie_common.utils.dict_utils import *
 from genie_common.utils.enum_utils import *
 from genie_common.utils.file_utils import *
-from genie_common.utils.general_utils import is_primitive
+from genie_common.utils.general_utils import *
 from genie_common.utils.image_utils import *
 from genie_common.utils.iterable_utils import *
 from genie_common.utils.os_utils import *
 from genie_common.utils.random_utils import *
 from genie_common.utils.regex_utils import *
 from genie_common.utils.string_utils import *
-from genie_common.utils.web_utils import *
 
 __all__ = [
     # callable
@@ -60,6 +59,13 @@ __all__ = [
     "random_datetime",
     "random_enum_value",
     "random_string_array",
+    "random_string_dict",
+    "random_integer_array",
+    "random_lowercase_string",
+    "random_port",
+    "random_postgres_connection_url",
+    "random_color_component",
+    "random_color",
 
     # regex
     "extract_int_from_string",
@@ -72,12 +78,8 @@ __all__ = [
     "compute_similarity_score",
     "contains_any_alpha_character",
     "contains_any_hebrew_character",
+    "contains_all_substrings",
     "contains_any_substring",
     "string_to_boolean",
-
-    # web
-    "jsonify_response",
-    "fetch_image",
-    "create_client_session",
-    "build_authorization_headers"
+    "string_to_bytes",
 ]

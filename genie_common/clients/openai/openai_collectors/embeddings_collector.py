@@ -1,8 +1,8 @@
 from typing import List, Optional
 
+from genie_common.clients.openai.openai_collectors.base_openai_collector import BaseOpenAICollector
+from genie_common.clients.openai.openai_consts import DATA, EMBEDDING, INPUT, MODEL
 from genie_common.models.openai import EmbeddingsModel
-from genie_common.openai.base_openai_collector import BaseOpenAICollector
-from genie_common.openai.openai_consts import DATA, EMBEDDING, INPUT, MODEL
 from genie_common.typing import Json
 
 

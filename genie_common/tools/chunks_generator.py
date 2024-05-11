@@ -1,4 +1,3 @@
-from math import ceil
 from typing import Generator, Optional, Union, Any, List, Type
 
 from genie_common.tools import AioPoolExecutor
@@ -20,11 +19,7 @@ class ChunksGenerator:
         )
 
     def generate_data_chunks(self, lst: list) -> Generator[list, None, None]:
-        total_chunks = ceil(len(lst) / self._chunk_size)
-        n_chunks = total_chunks if self._max_chunks_number is None else min(total_chunks, self._max_chunks_number)
-
         for i in range(0, len(lst), self._chunk_size):
-            print(f'Generating chunk {self._get_chunk_number(i)} out of {n_chunks} (Total: {total_chunks})')
             yield lst[i: i + self._chunk_size]
 
     def _get_chunk_number(self, index: int) -> int:

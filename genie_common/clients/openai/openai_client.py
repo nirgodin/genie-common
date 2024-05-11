@@ -1,7 +1,6 @@
 from aiohttp import ClientSession
 
-from genie_common.openai.openai_collectors import ChatCompletionsCollector, EmbeddingsCollector, ImageGeneratorCollector
-from genie_common.openai.openai_collectors.images_variator_collector import ImageVariatorCollector
+from genie_common.clients.openai.openai_collectors import *
 
 
 class OpenAIClient:
