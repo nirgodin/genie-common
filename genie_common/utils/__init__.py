@@ -35,6 +35,8 @@ __all__ = [
     # file
     "read_json",
     "to_json",
+    "to_jsonl",
+    "read_jsonl",
 
     # general
     "is_primitive",
