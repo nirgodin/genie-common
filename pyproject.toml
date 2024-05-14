@@ -8,12 +8,13 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = ">=3.8,<3.12"
 aiohttp = { version = ">=3.6.3,<3.9.0", optional = true }
-asyncio-pool = "^0.6.0"
+google-cloud-translate = { version = ">=3.15.3,<3.16", optional = true }
+asyncio-pool = ">=0.6.0,<0.7"
 opencv-python-headless = ">=4.7,<5.0"
 tqdm = ">=4.65,<5.0"
 
 [tool.poetry.extras]
-clients = ["aiohttp"]
+clients = ["aiohttp", "google-cloud-translate"]
 
 [build-system]
 requires = ["poetry-core"]
