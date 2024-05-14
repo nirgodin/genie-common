@@ -4,6 +4,7 @@ from genie_common.utils.dict_utils import *
 from genie_common.utils.enum_utils import *
 from genie_common.utils.file_utils import *
 from genie_common.utils.general_utils import *
+from genie_common.utils.google_utils import *
 from genie_common.utils.image_utils import *
 from genie_common.utils.iterable_utils import *
 from genie_common.utils.os_utils import *
@@ -39,6 +40,10 @@ __all__ = [
 
     # general
     "is_primitive",
+
+    # google
+    "load_google_service_account_info",
+    "get_google_project_id",
 
     # image
     "decode_image",
