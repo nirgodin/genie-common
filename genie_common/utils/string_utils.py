@@ -1,4 +1,5 @@
 from difflib import SequenceMatcher
+from string import punctuation, ascii_letters
 from typing import Iterable
 
 
@@ -31,3 +32,12 @@ def contains_all_substrings(s: str, substrings: Iterable[str]) -> bool:
 
 def string_to_bytes(s: str) -> bytes:
     return s.encode("utf-8")
+
+
+def contains_any_non_english_character(text: str, ignore_punctuation: bool = True) -> bool:
+    characters = ascii_letters + " "
+
+    if ignore_punctuation:
+        characters += punctuation
+
+    return any(letter not in characters for letter in text)
