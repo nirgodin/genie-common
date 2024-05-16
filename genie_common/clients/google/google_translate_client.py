@@ -1,4 +1,3 @@
-import os
 from typing import Optional, List
 
 from google.cloud.translate_v3 import TranslationServiceClient
