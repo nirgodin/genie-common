@@ -1,3 +1,4 @@
+from html import unescape
 from typing import Optional, List
 
 from google.cloud.translate_v3 import TranslationServiceClient
@@ -42,7 +43,7 @@ class GoogleTranslateClient:
         for text, translate_response in zip(texts, response.translations):
             translation_response = TranslationResponse(
                 text=text,
-                translation=translate_response.translated_text,
+                translation=unescape(translate_response.translated_text),
                 source_language=source_language or translate_response.detected_language_code,
                 target_language=target_language
             )
