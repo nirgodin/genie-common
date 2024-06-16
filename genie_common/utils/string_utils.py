@@ -1,5 +1,5 @@
 from difflib import SequenceMatcher
-from string import punctuation, ascii_letters
+from string import punctuation, ascii_letters, digits, whitespace
 from typing import Iterable
 
 
@@ -35,7 +35,7 @@ def string_to_bytes(s: str) -> bytes:
 
 
 def contains_any_non_english_character(text: str, ignore_punctuation: bool = True) -> bool:
-    characters = ascii_letters + " "
+    characters = ascii_letters + whitespace + digits
 
     if ignore_punctuation:
         characters += punctuation
