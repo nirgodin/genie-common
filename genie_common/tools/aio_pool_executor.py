@@ -17,6 +17,20 @@ class AioPoolExecutor:
                   iterable: Sized,
                   func: AF,
                   expected_type: Optional[Type] = None) -> List[Any]:
+        if not iterable:
+            logger.warning("AioPoolExecutor did not receive any values in iterable. Returning empty list instead")
+            return []
+
+        return await self._execute(
+            iterable=iterable,
+            func=func,
+            expected_type=expected_type
+        )
+
+    async def _execute(self,
+                       iterable: Sized,
+                       func: AF,
+                       expected_type: Optional[Type]) -> List[Any]:
         pool = AioPool(self._pool_size)
 
         with tqdm(total=len(iterable)) as progress_bar:
