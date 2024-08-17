@@ -3,7 +3,7 @@ from smtplib import SMTP
 from traceback import format_exc
 from typing import List, Optional
 
-from genie_common.tools import logger
+from genie_common.tools.logs import logger
 
 
 class EmailSender:
