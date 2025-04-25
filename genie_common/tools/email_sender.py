@@ -1,4 +1,6 @@
 from contextlib import contextmanager
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 from smtplib import SMTP
 from traceback import format_exc
 from typing import List, Optional
@@ -12,13 +14,25 @@ class EmailSender:
         self._password = password
 
     def send(self, recipients: List[str], subject: str, body: str) -> None:
-        joined_recipients = ",".join(recipients)
-        message = f"From: {self._user}\nTo: {joined_recipients}\nSubject: {subject}\n\n {body}"
+        message = MIMEMultipart()
+        message.attach(MIMEText(body, 'plain'))
+
+        self.send_multipart(
+            recipients=recipients,
+            subject=subject,
+            message=message
+        )
+
+    def send_multipart(self, recipients: List[str], subject: str, message: MIMEMultipart) -> None:
+        message['Subject'] = subject
+        message['From'] = self._user
+        message['To'] = ",".join(recipients)
 
         try:
-            self._send_mail(recipients, message)
+            self._send_mail(recipients, message.as_string())
             logger.info("Successfully sent mail")
-        except Exception as e:
+
+        except Exception:
             logger.exception("Failed to send mail")
 
     @contextmanager
